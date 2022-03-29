@@ -1,0 +1,6 @@
+name: arrow-targets-s3-gha-pipeline
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Pulumi Stack of a a Demo using Arrow & Targets
