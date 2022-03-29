@@ -1,7 +1,7 @@
 """An AWS Python Pulumi program"""
 
 import pulumi
-import s3
+import modules.s3 as s3
 
 config = pulumi.Config()
 
@@ -19,3 +19,5 @@ targets_bucket = s3.define_s3_targets_bucket(project_tags)
 # Export the name of the buckets.
 pulumi.export('data_bucket_name', data_bucket.id)
 pulumi.export('targets_bucket_name', targets_bucket.id)
+
+##### IAM Roles #####
