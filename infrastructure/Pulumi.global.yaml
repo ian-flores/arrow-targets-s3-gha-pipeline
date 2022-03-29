@@ -1,3 +1,4 @@
 config:
   arrow-targets-s3-gha-pipeline:owner: iflores.siaca
+  arrow-targets-s3-gha-pipeline:repository_name: ian-flores/arrow-targets-s3-gha-pipeline
   aws:region: us-east-2
