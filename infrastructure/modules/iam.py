@@ -7,7 +7,9 @@ def define_oidc_provider(project_tags):
     thumbprint_lists = ["6938fd4d98bab03faadb97b34396831e3780aea1"],
     url = "https://token.actions.githubusercontent.com",
     tags=project_tags,
-    opts=pulumi.ResourceOptions(protect=True))
+    # These opts is so the provider doesn't get deleted as 
+    # in my case it is used for other purposes as well
+    opts=pulumi.ResourceOptions(protect=True)) 
 
 def define_assume_role_policy(oidc_provider, repository_name):
     return aws.iam.get_policy_document(
