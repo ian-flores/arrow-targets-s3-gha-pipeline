@@ -19,7 +19,9 @@ targets_bucket = s3.define_s3_targets_bucket(project_tags)
 
 # Export the name of the buckets.
 pulumi.export('data_bucket_name', data_bucket.id)
+pulumi.export('data_bucket_arn', data_bucket.arn)
 pulumi.export('targets_bucket_name', targets_bucket.id)
+pulumi.export('targets_bucket_arn', targets_bucket.arn)
 
 ##### IAM Roles #####
 oidc_provider = iam.define_oidc_provider(project_tags)

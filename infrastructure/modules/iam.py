@@ -2,11 +2,12 @@ import pulumi
 import pulumi_aws as aws
 
 def define_oidc_provider(project_tags):
-    return aws.iam.OpenIdConnectProvider("oidc-provider",
+    return aws.iam.OpenIdConnectProvider("github-oidc-provider",
     client_id_lists = ["sts.amazonaws.com"],
     thumbprint_lists = ["6938fd4d98bab03faadb97b34396831e3780aea1"],
     url = "https://token.actions.githubusercontent.com",
-    tags=project_tags)
+    tags=project_tags,
+    opts=pulumi.ResourceOptions(protect=True))
 
 def define_assume_role_policy(oidc_provider, repository_name):
     return aws.iam.get_policy_document(
