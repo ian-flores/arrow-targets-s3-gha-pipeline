@@ -26,15 +26,15 @@ get_deployment <- function(pulumiStack){
   return(pulumiStack$deployment)
 }
 
-get_resources <- function(deployment){
-  return(deployment$resources)
+get_resources <- function(pulumiDeployment){
+  return(pulumiDeployment$resources)
 }
 
-get_stack_outputs <- function(resources){
-  outputs <- resources[[1]]$outputs
-  return(outputs)
+get_stack_outputs <- function(pulumiResources){
+  stackOutputs <- pulumiResources[[1]]$outputs
+  return(stackOutputs)
 }
 
-get_output_value <- function(outputs, output_key){
-  return(outputs[[output_key]])
+get_output_value <- function(pulumiStackOutputs, output_key){
+  return(pulumiStackOutputs[[output_key]])
 }
