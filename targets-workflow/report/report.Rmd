@@ -1,0 +1,36 @@
+---
+title: "Worst Historical Stock Performers for Today"
+author: "Ian Flores Siaca"
+date: "`r Sys.Date()`"
+---
+
+```{r, echo=FALSE}
+library(targets)
+library(ggplot2)
+
+tar_load(red_day_df)
+tar_load(red_month_df)
+```
+
+## Which stocks have closed lower than they opened on days with today's numeration?
+
+```{r}
+red_day_df %>%
+  ggplot(aes(x = reorder(symbol, n), y = n)) +
+    geom_bar(stat = 'identity') +
+    coord_flip() +
+    xlab("Ticker") +
+    ylab("Days where the stock closed lower than it opened")
+```
+
+## Which stocks have closed lower than they opened on days with today's month numeration?
+
+```{r}
+red_month_df %>%
+  ggplot(aes(x = reorder(symbol, n), y = n)) +
+    geom_bar(stat = 'identity') +
+    coord_flip() +
+    xlab("Ticker") +
+    ylab("Days where the stock closed lower than it opened")
+```
+

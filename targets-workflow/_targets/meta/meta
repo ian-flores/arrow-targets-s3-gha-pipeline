@@ -1,0 +1,20 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+arrow_dataset|stem|51071ca4fa1b0265|45b455cfaa979969|11f7cf74187233c2|-828810217|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/arrow_dataset*endpoint=TlVMTA*version=|t19083.6350831403s||4210|rds|aws|vector|||34.306||
+current_day|stem|f48b28d5747ceea5|10503aca9ecfbfbd|a0eaa2973a044531|71959172|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/current_day*endpoint=TlVMTA*version=|t19083.6346730341s||48|rds|aws|vector|||0||
+current_month|stem|e830fe3cf59b2162|8e0da12e14fec552|a0eaa2973a044531|-1115200130|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/current_month*endpoint=TlVMTA*version=|t19083.6346772331s||49|rds|aws|vector|||0||
+data_bucket|stem|08f01c0ccf97fad1|cbed64e99db02845|373c73f40e4c8c61|-880575810|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/data_bucket*endpoint=TlVMTA*version=|t19083.6346624951s||4584|rds|aws|vector|||0.592||
+data_bucket_name|object|5f45f3ed73a3128d|||||||||||||||
+get_deployment|function|daf36d2c45c5c767|||||||||||||||
+get_output_value|function|331dc613f2da1d38|||||||||||||||
+get_resources|function|dcb78ea04eec8e0e|||||||||||||||
+get_stack|function|fe69a82b65f772e4|||||||||||||||
+get_stack_outputs|function|be732cafb7088255|||||||||||||||
+grouped_by_date_folder|stem|08f01c0ccf97fad1|6d44bed9f35e3aac|bf29a797d8699246|-1591052998|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/grouped_by_date_folder*endpoint=TlVMTA*version=|t19083.6346816438s||4584|rds|aws|vector|||0.001||
+pulumiDeployment|object|0cb3278ce881f1db|||||||||||||||
+pulumiOutputs|object|24fea3d231aba2a5|||||||||||||||
+pulumiResources|object|39414e9888c020c7|||||||||||||||
+pulumiStack|object|51caf0bb81353945|||||||||||||||
+red_day_df|stem|ef19ac39cb7fc024|2a6f8d295bfc3a68|9956b13b9fcd6dd4|1182262913|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/red_day_df*endpoint=TlVMTA*version=|t19083.635393032s||267|rds|aws|vector|||6.877||
+red_month_df|stem|321f2f0c87ccacff|4bb07965d4e46879|f7a42243df7b59d4|-624607163|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/red_month_df*endpoint=TlVMTA*version=|t19083.6353083352s||291|rds|aws|vector|||18.69||
+rmarkdown_report|stem|d638f8c9ecbc9b4a|83f399d925d52c07|dd81b03d1d670fe0|649666303|bucket=targets-bucket-20220330182101379200000002*region=NULL*key=_targets/objects/rmarkdown_report*endpoint=TlVMTA*stage=report/report.html*stage=report/report.Rmd|t19083.6519296323s|5c7a9907eeb96695|839833|file|aws|vector|||||_store_ invalid description argument
+targets_bucket_name|object|62ab1a7a36f3ae71|||||||||||||||
