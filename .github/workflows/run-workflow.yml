@@ -1,9 +1,13 @@
+name: Run Workflow
+
 on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
-name: Run Workflow
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   run-workflow:
@@ -17,6 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: ${{ secrets.AWS_S3_ROLE }}
+          aws-region: ${{ secrets.AWS_S3_REGION }}
+
       - uses: r-lib/actions/setup-r@v1
 
       - name: Cache renv packages
@@ -24,7 +34,7 @@ jobs:
         with:
           path: ./renv-cache
           key: ${{ runner.os }}-packages
-          
+
       - name: Install renv
         run: |
           install.packages("renv")
