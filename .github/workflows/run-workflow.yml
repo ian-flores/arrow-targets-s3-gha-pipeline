@@ -1,0 +1,42 @@
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+name: Run Workflow
+
+jobs:
+  run-workflow:
+    runs-on: macOS-latest
+    defaults:
+      run:
+        working-directory: ./targets-workflow
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@v1
+
+      - name: Install renv
+        run: |
+          install.packages("renv")
+        shell: Rscript {0}
+
+      - name: Restore environment
+        run: |
+          renv::consent(TRUE)
+          renv::restore()
+        shell: Rscript {0}
+      
+      - name: Run targets workflow
+        run: |
+          targets::tar_make()
+        shell: Rscript {0}
+
+      - name: Push the generated report
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add report/report.html
+          git commit -m "GH ACTION - Report Generated"
+          git push -q

@@ -14,8 +14,8 @@ project_tags = {
 ##### S3 Buckets #####
 
 # Define buckets for the project.
-data_bucket = s3.define_s3_data_bucket(project_tags)
-targets_bucket = s3.define_s3_targets_bucket(project_tags)
+data_bucket = s3.define_bucket('data-bucket-', project_tags)
+targets_bucket = s3.define_bucket('targets-bucket-', project_tags)
 
 # Export the name of the buckets.
 pulumi.export('data_bucket_name', data_bucket.id)

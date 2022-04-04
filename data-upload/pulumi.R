@@ -1,6 +1,5 @@
-library(httr)
+library(httr2)
 library(jsonlite)
-library(magrittr)
 library(purrr)
 
 get_stack <- function(org = Sys.getenv("PULUMI_ORG"),
@@ -9,10 +8,11 @@ get_stack <- function(org = Sys.getenv("PULUMI_ORG"),
                       token = Sys.getenv("PULUMI_TOKEN")){
   
   url <- paste0("https://api.pulumi.com/api/stacks/", org,  "/", project, "/", stack, "/export")
-  req <- httr2::request(url) %>%
-    httr2::req_headers("Content-Type" = "application/json", 
-                       "Accept" = "application/vnd.pulumi+8",
-                       "Authorization" = paste("token", token))
+  req <- httr2::request(url)
+  req <- httr2::req_headers(req, 
+                            "Content-Type" = "application/json", 
+                            "Accept" = "application/vnd.pulumi+8",
+                            "Authorization" = paste("token", token))
 
   resp <- httr2::req_perform(req)
   
