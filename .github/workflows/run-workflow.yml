@@ -55,6 +55,10 @@ jobs:
           targets::tar_make()
         shell: Rscript {0}
 
+      - name: Sync S3 targets bucket
+        run: |
+          Rscript bucket-syncer.R
+          
       - name: Push the generated report
         run: |
           git config user.name github-actions
