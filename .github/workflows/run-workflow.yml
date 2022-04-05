@@ -18,6 +18,10 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       RENV_PATHS_CACHE: ./renv-cache
+      PULUMI_TOKEN: ${{ secrets.PULUMI_TOKEN }}
+      PULUMI_ORG: ${{ secrets.PULUMI_ORG }}
+      PULUMI_PROJECT: ${{ secrets.PULUMI_PROJECT }}
+      PULUMI_STACK: ${{ secrets.PULUMI_STACK }}
     steps:
       - uses: actions/checkout@v2
 
