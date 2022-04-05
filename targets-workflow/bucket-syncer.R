@@ -9,4 +9,4 @@ pulumiOutputs <- get_stack_outputs(pulumiResources)
 
 targets_bucket_name <- get_output_value(pulumiOutputs, "targets_bucket_name")
 
-aws.s3::s3sync(bucket = targets_bucket_name)
+aws.s3::s3sync(bucket = targets_bucket_name, path = "_targets")
